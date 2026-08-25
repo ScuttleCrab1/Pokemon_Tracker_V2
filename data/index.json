@@ -1,0 +1,11 @@
+{
+  "cartes": [
+    {
+      "timestamp": "2026-08-25T1930",
+      "path": "data/snapshots/cartes/2026-08-25T1930.json",
+      "count": 338,
+      "label": "Snapshot initial (import cartes.csv)"
+    }
+  ],
+  "scelles": []
+}

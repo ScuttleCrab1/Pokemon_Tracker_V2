@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Pokémon Collection Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <span class="sidebar__brand-mark">🎴</span>
+          <span>Poké Tracker</span>
+        </div>
+        <nav class="sidebar__nav">
+          <a class="sidebar__link is-active" href="#dashboard">📊 Dashboard</a>
+          <a class="sidebar__link" href="#top-gainers-section">🏆 Top perf.</a>
+          <a class="sidebar__link" href="#imports-section">🕒 Historique</a>
+        </nav>
+        <div class="sidebar__footer">Mis à jour à chaque envoi du CSV iEstim.</div>
+      </aside>
+
+      <main class="main" id="main-content">
+        <div class="topbar" id="dashboard">
+          <div class="topbar__title">
+            <h1>Ma collection Pokémon</h1>
+            <p>Valeur, performance et historique de tes cartes &amp; produits scellés.</p>
+          </div>
+          <div id="period-picker"></div>
+        </div>
+
+        <section class="kpi-grid" id="kpi-grid"></section>
+
+        <section class="content-grid">
+          <div class="card chart-card">
+            <div class="card__header">
+              <div>
+                <div class="card__title">Évolution de la valeur</div>
+                <div class="card__subtitle">Total de la collection dans le temps</div>
+              </div>
+              <div class="card__legend">
+                <span><i style="background:#6c5ce7"></i>Total</span>
+                <span><i style="background:#7c6ef6"></i>Cartes</span>
+                <span><i style="background:#3b82f6"></i>Scellés</span>
+              </div>
+            </div>
+            <canvas id="value-chart" height="90"></canvas>
+          </div>
+
+          <div class="card" id="imports-section">
+            <div class="card__header">
+              <div>
+                <div class="card__title">Derniers imports</div>
+                <div class="card__subtitle">Historique des snapshots reçus</div>
+              </div>
+            </div>
+            <div id="imports-table"></div>
+          </div>
+        </section>
+
+        <section class="top-grid" id="top-gainers-section">
+          <div class="card">
+            <div class="card__header">
+              <div>
+                <div class="card__title">🏆 Top 10 meilleures perfs</div>
+                <div class="card__subtitle">Sur la période sélectionnée</div>
+              </div>
+            </div>
+            <div id="top-gainers"></div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div>
+                <div class="card__title">📉 Top 10 pires perfs</div>
+                <div class="card__subtitle">Sur la période sélectionnée</div>
+              </div>
+            </div>
+            <div id="top-losers"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
