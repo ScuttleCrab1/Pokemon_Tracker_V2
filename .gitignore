@@ -1,3 +1,7 @@
 .DS_Store
 Thumbs.db
 node_modules/
+
+# CSV bruts déposés pour import (les snapshots générés dans data/ sont versionnés, pas les CSV sources)
+csv-a-importer/*.csv
+csv-a-importer/traites/*.csv

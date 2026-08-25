@@ -12,7 +12,9 @@ data/
   index.json              liste des snapshots disponibles
   snapshots/cartes/        un fichier JSON horodaté par import de cartes.csv
   snapshots/scelles/       idem pour les produits scellés (format à définir)
-ingest/ingest.py           algorithme de référence CSV -> snapshot JSON
+ingest/ingest.py           algorithme de référence CSV -> snapshot JSON (Python)
+tools/import-dropbox.ps1   import local en masse depuis csv-a-importer/ (PowerShell, pas besoin de Python)
+csv-a-importer/            dépose ici tes CSV nommés MMJJ.csv pour un import local (voir son README)
 docs/
   CLAUDE_PROJECT_INSTRUCTIONS.md   à coller dans le Projet claude.ai qui fait l'ingestion
   DEPLOIEMENT.md                   étapes GitHub / Vercel / claude.ai à faire toi-même
