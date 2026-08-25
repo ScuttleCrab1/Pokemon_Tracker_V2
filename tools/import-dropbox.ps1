@@ -5,16 +5,27 @@
   sur cette machine).
 
 .NOTES
-  Convention de nom de fichier dans csv-a-importer/ :
-    MMJJ.csv           -> export cartes du JJ/MM de l'année en cours (ex: 0705.csv = 5 juillet)
-    scelles-MMJJ.csv    -> export scellés du JJ/MM
+  Deux conventions acceptées dans csv-a-importer/ :
 
-  Chaque fichier traité est déplacé dans csv-a-importer/traites/ pour ne pas
-  être réimporté par erreur. Relancer avec -Force pour retraiter un fichier
-  déjà présent dans traites/.
+  1) Fichiers à plat, nommés par date :
+       MMJJ.csv           -> export cartes du JJ/MM de l'année en cours (ex: 0705.csv = 5 juillet)
+       scelles-MMJJ.csv    -> export scellés du JJ/MM
 
-  La logique de slug/id est IDENTIQUE à js/matching.js et ingest/ingest.py -
-  garder les trois synchronisés si elle change.
+  2) Dossiers datés contenant les vrais noms iEstim (comme sur l'iPhone) :
+       csv-a-importer/0705/portefeuille_cartes.csv
+       csv-a-importer/0705/portefeuille_items.csv
+     (le nom du dossier porte la date MMJJ ; le nom du fichier porte le type)
+
+  Chaque fichier traité est déplacé dans csv-a-importer/traites/ (et le dossier
+  daté supprimé s'il est vide) pour ne pas être réimporté par erreur. Relancer
+  avec -Force pour retraiter un fichier déjà présent dans traites/.
+
+  Le format "objets scellés" n'est pas encore défini (colonnes de
+  portefeuille_items.csv inconnues) : ces fichiers sont détectés mais ignorés
+  avec un avertissement en attendant.
+
+  La logique de slug/id est IDENTIQUE à js/matching.js, ingest/ingest.py et
+  docs/CLAUDE_PROJECT_INSTRUCTIONS.md - garder les quatre synchronisés si elle change.
 
 .EXAMPLE
   powershell -File ./tools/import-dropbox.ps1
@@ -90,52 +101,75 @@ function Update-Index($type, $timestamp, $path, $count, $label) {
   $index | ConvertTo-Json -Depth 6 | Out-File -FilePath $indexPath -Encoding utf8
 }
 
-$files = Get-ChildItem -Path $dropDir -Filter "*.csv" -File
-if ($files.Count -eq 0) {
-  Write-Host "Aucun CSV a traiter dans $dropDir"
-  return
-}
-
-foreach ($file in $files) {
-  $name = $file.BaseName  # sans extension
-  $type = "cartes"
-  $datePart = $name
-
-  if ($name -match '^scelles-(\d{4})$') {
-    $type = "scelles"
-    $datePart = $Matches[1]
-  } elseif ($name -notmatch '^\d{4}$') {
-    Write-Warning "Nom de fichier ignore (attendu MMJJ.csv ou scelles-MMJJ.csv) : $($file.Name)"
-    continue
+function Get-TimestampFromDatePart($datePart, $sourceLabel) {
+  if ($datePart -notmatch '^\d{4}$') {
+    Write-Warning "Date illisible (attendu MMJJ) : $sourceLabel"
+    return $null
   }
-
   $month = $datePart.Substring(0, 2)
   $day = $datePart.Substring(2, 2)
   try {
     $date = Get-Date -Year $Year -Month ([int]$month) -Day ([int]$day)
   } catch {
-    Write-Warning "Date invalide dans le nom de fichier : $($file.Name) (mois=$month jour=$day)"
-    continue
+    Write-Warning "Date invalide : $sourceLabel (mois=$month jour=$day)"
+    return $null
   }
-  $timestamp = $date.ToString("yyyy-MM-ddT0000")
+  return $date.ToString("yyyy-MM-ddT0000")
+}
 
-  if ($type -eq "cartes") {
-    $items = Import-CartesCsv $file.FullName
-  } else {
+function Import-CartesFile($csvFile, $timestamp, $sourceLabel) {
+  $items = Import-CartesCsv $csvFile.FullName
+  $outDir = Join-Path $root "data/snapshots/cartes"
+  New-Item -ItemType Directory -Force -Path $outDir | Out-Null
+  $outPath = Join-Path $outDir "$timestamp.json"
+  $snapshot = [ordered]@{ timestamp = $timestamp; source = $sourceLabel; items = $items }
+  $snapshot | ConvertTo-Json -Depth 5 | Out-File -FilePath $outPath -Encoding utf8
+
+  Update-Index -type "cartes" -timestamp $timestamp -path "data/snapshots/cartes/$timestamp.json" -count $items.Count -label "Import $sourceLabel"
+
+  $total = ($items | Measure-Object -Property prixActuel -Sum).Sum
+  Write-Host "OK $sourceLabel -> $timestamp (cartes, $($items.Count) items, $([math]::Round($total,2)) EUR)"
+}
+
+# --- Convention 1 : fichiers a plat MMJJ.csv / scelles-MMJJ.csv ---
+$flatFiles = Get-ChildItem -Path $dropDir -Filter "*.csv" -File
+foreach ($file in $flatFiles) {
+  $name = $file.BaseName
+  if ($name -match '^scelles-(\d{4})$') {
     Write-Warning "Format scelles pas encore defini - fichier ignore : $($file.Name)"
     continue
   }
+  if ($name -notmatch '^\d{4}$') {
+    Write-Warning "Nom de fichier ignore (attendu MMJJ.csv ou scelles-MMJJ.csv, ou depose-le dans un dossier date, voir portefeuille_*.csv) : $($file.Name)"
+    continue
+  }
+  $timestamp = Get-TimestampFromDatePart $name $file.Name
+  if (-not $timestamp) { continue }
 
-  $outDir = Join-Path $root "data/snapshots/$type"
-  New-Item -ItemType Directory -Force -Path $outDir | Out-Null
-  $outPath = Join-Path $outDir "$timestamp.json"
-  $snapshot = [ordered]@{ timestamp = $timestamp; source = $file.Name; items = $items }
-  $snapshot | ConvertTo-Json -Depth 5 | Out-File -FilePath $outPath -Encoding utf8
-
-  Update-Index -type $type -timestamp $timestamp -path "data/snapshots/$type/$timestamp.json" -count $items.Count -label "Import $($file.Name)"
-
-  $total = ($items | Measure-Object -Property prixActuel -Sum).Sum
-  Write-Host "OK $($file.Name) -> $timestamp ($type, $($items.Count) items, $([math]::Round($total,2)) EUR)"
-
+  Import-CartesFile $file $timestamp $file.Name
   Move-Item -Path $file.FullName -Destination (Join-Path $doneDir $file.Name) -Force:$Force
+}
+
+# --- Convention 2 : dossiers dates contenant portefeuille_cartes.csv / portefeuille_items.csv ---
+$dateFolders = Get-ChildItem -Path $dropDir -Directory | Where-Object { $_.Name -ne "traites" -and $_.Name -match '^\d{4}$' }
+foreach ($folder in $dateFolders) {
+  $timestamp = Get-TimestampFromDatePart $folder.Name $folder.Name
+  if (-not $timestamp) { continue }
+
+  $cartesFile = Join-Path $folder.FullName "portefeuille_cartes.csv"
+  $itemsFile = Join-Path $folder.FullName "portefeuille_items.csv"
+
+  if (Test-Path $cartesFile) {
+    Import-CartesFile (Get-Item $cartesFile) $timestamp "$($folder.Name)/portefeuille_cartes.csv"
+  }
+  if (Test-Path $itemsFile) {
+    Write-Warning "Format scelles pas encore defini - portefeuille_items.csv ignore ($($folder.Name))"
+  }
+
+  $destFolder = Join-Path $doneDir $folder.Name
+  Move-Item -Path $folder.FullName -Destination $destFolder -Force:$Force
+}
+
+if ($flatFiles.Count -eq 0 -and $dateFolders.Count -eq 0) {
+  Write-Host "Aucun CSV a traiter dans $dropDir"
 }
