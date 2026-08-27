@@ -1,11 +1,156 @@
 {
   "cartes": [
     {
+      "timestamp": "2026-05-29T1805",
+      "path": "data/snapshots/cartes/2026-05-29T1805.json",
+      "count": 216,
+      "label": "Import cartes 0529"
+    },
+    {
+      "timestamp": "2026-06-04T1805",
+      "path": "data/snapshots/cartes/2026-06-04T1805.json",
+      "count": 239,
+      "label": "Import cartes 0604"
+    },
+    {
+      "timestamp": "2026-06-06T1805",
+      "path": "data/snapshots/cartes/2026-06-06T1805.json",
+      "count": 328,
+      "label": "Import cartes 0606"
+    },
+    {
+      "timestamp": "2026-06-10T1805",
+      "path": "data/snapshots/cartes/2026-06-10T1805.json",
+      "count": 328,
+      "label": "Import cartes 0610"
+    },
+    {
+      "timestamp": "2026-06-13T1805",
+      "path": "data/snapshots/cartes/2026-06-13T1805.json",
+      "count": 328,
+      "label": "Import cartes 0613"
+    },
+    {
+      "timestamp": "2026-07-02T1805",
+      "path": "data/snapshots/cartes/2026-07-02T1805.json",
+      "count": 328,
+      "label": "Import cartes 0702"
+    },
+    {
+      "timestamp": "2026-07-03T1805",
+      "path": "data/snapshots/cartes/2026-07-03T1805.json",
+      "count": 328,
+      "label": "Import cartes 0703"
+    },
+    {
+      "timestamp": "2026-07-21T1805",
+      "path": "data/snapshots/cartes/2026-07-21T1805.json",
+      "count": 335,
+      "label": "Import cartes 0721"
+    },
+    {
+      "timestamp": "2026-07-23T1805",
+      "path": "data/snapshots/cartes/2026-07-23T1805.json",
+      "count": 335,
+      "label": "Import cartes 0723"
+    },
+    {
+      "timestamp": "2026-08-01T1805",
+      "path": "data/snapshots/cartes/2026-08-01T1805.json",
+      "count": 338,
+      "label": "Import cartes 0801"
+    },
+    {
+      "timestamp": "2026-08-25T1805",
+      "path": "data/snapshots/cartes/2026-08-25T1805.json",
+      "count": 341,
+      "label": "Import cartes 0825"
+    },
+    {
       "timestamp": "2026-08-25T1930",
       "path": "data/snapshots/cartes/2026-08-25T1930.json",
       "count": 338,
       "label": "Snapshot initial (import cartes.csv)"
+    },
+    {
+      "timestamp": "2026-08-26T1805",
+      "path": "data/snapshots/cartes/2026-08-26T1805.json",
+      "count": 341,
+      "label": "Import cartes 0826"
     }
   ],
-  "scelles": []
+  "scelles": [
+    {
+      "timestamp": "2026-05-29T1805",
+      "path": "data/snapshots/scelles/2026-05-29T1805.json",
+      "count": 31,
+      "label": "Import scelles 0529"
+    },
+    {
+      "timestamp": "2026-06-04T1805",
+      "path": "data/snapshots/scelles/2026-06-04T1805.json",
+      "count": 31,
+      "label": "Import scelles 0604"
+    },
+    {
+      "timestamp": "2026-06-06T1805",
+      "path": "data/snapshots/scelles/2026-06-06T1805.json",
+      "count": 31,
+      "label": "Import scelles 0606"
+    },
+    {
+      "timestamp": "2026-06-10T1805",
+      "path": "data/snapshots/scelles/2026-06-10T1805.json",
+      "count": 31,
+      "label": "Import scelles 0610"
+    },
+    {
+      "timestamp": "2026-06-13T1805",
+      "path": "data/snapshots/scelles/2026-06-13T1805.json",
+      "count": 31,
+      "label": "Import scelles 0613"
+    },
+    {
+      "timestamp": "2026-07-02T1805",
+      "path": "data/snapshots/scelles/2026-07-02T1805.json",
+      "count": 31,
+      "label": "Import scelles 0702"
+    },
+    {
+      "timestamp": "2026-07-03T1805",
+      "path": "data/snapshots/scelles/2026-07-03T1805.json",
+      "count": 31,
+      "label": "Import scelles 0703"
+    },
+    {
+      "timestamp": "2026-07-21T1805",
+      "path": "data/snapshots/scelles/2026-07-21T1805.json",
+      "count": 32,
+      "label": "Import scelles 0721"
+    },
+    {
+      "timestamp": "2026-07-23T1805",
+      "path": "data/snapshots/scelles/2026-07-23T1805.json",
+      "count": 32,
+      "label": "Import scelles 0723"
+    },
+    {
+      "timestamp": "2026-08-01T1805",
+      "path": "data/snapshots/scelles/2026-08-01T1805.json",
+      "count": 32,
+      "label": "Import scelles 0801"
+    },
+    {
+      "timestamp": "2026-08-25T1805",
+      "path": "data/snapshots/scelles/2026-08-25T1805.json",
+      "count": 32,
+      "label": "Import scelles 0825"
+    },
+    {
+      "timestamp": "2026-08-26T1805",
+      "path": "data/snapshots/scelles/2026-08-26T1805.json",
+      "count": 32,
+      "label": "Import scelles 0826"
+    }
+  ]
 }

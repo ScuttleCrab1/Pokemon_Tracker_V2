@@ -1,0 +1,262 @@
+{
+  "timestamp": "2026-08-01T1805",
+  "source": "portefeuille_items.csv (Fichier_012)",
+  "items": [
+    {
+      "id": "upc-sulfura-ex-de-la-team-rocket",
+      "type": "upc",
+      "nom": "Sulfura Ex de la Team Rocket",
+      "quantite": 1,
+      "prixAchat": 170.0,
+      "prixActuel": 228.0
+    },
+    {
+      "id": "etb-flammes-fantasmagoriques",
+      "type": "etb",
+      "nom": "Flammes Fantasmagoriques",
+      "quantite": 1,
+      "prixAchat": 55.0,
+      "prixActuel": 95.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-nymphali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Nymphali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 24.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-voltali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Voltali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 21.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-pyroli",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Pyroli)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 23.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-phyllali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Phyllali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 23.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-mentali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Mentali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 21.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-givrali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Givrali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 19.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-aquali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Aquali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 20.0
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-noctali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Noctali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 26.0
+    },
+    {
+      "id": "tripack-evolutions-prismatiques-phyllali",
+      "type": "tripack",
+      "nom": "Evolutions Prismatiques (Phyllali)",
+      "quantite": 1,
+      "prixAchat": 19.0,
+      "prixActuel": 33.0
+    },
+    {
+      "id": "tripack-evolutions-prismatiques-givrali",
+      "type": "tripack",
+      "nom": "Evolutions Prismatiques (Givrali)",
+      "quantite": 1,
+      "prixAchat": 19.0,
+      "prixActuel": 33.0
+    },
+    {
+      "id": "coffret-dracaufeu-ex-speciale",
+      "type": "coffret",
+      "nom": "Dracaufeu Ex Speciale",
+      "quantite": 1,
+      "prixAchat": 60.0,
+      "prixActuel": 49.0
+    },
+    {
+      "id": "coffret-zenith-supreme-pikachu-vmax",
+      "type": "coffret",
+      "nom": "Zenith Supreme (Pikachu Vmax)",
+      "quantite": 2,
+      "prixAchat": 127.2,
+      "prixActuel": 258.0
+    },
+    {
+      "id": "etb-nuit-noire",
+      "type": "etb",
+      "nom": "Nuit Noire",
+      "quantite": 1,
+      "prixAchat": 55.0,
+      "prixActuel": 77.0
+    },
+    {
+      "id": "etb-rivalites-destinees",
+      "type": "etb",
+      "nom": "Rivalites Destinees",
+      "quantite": 3,
+      "prixAchat": 294.0,
+      "prixActuel": 474.0
+    },
+    {
+      "id": "mini-tin-151-ramoloss",
+      "type": "mini_tin",
+      "nom": "151 (Ramoloss)",
+      "quantite": 1,
+      "prixAchat": 26.4,
+      "prixActuel": 38.0
+    },
+    {
+      "id": "mini-tin-151-elektek",
+      "type": "mini_tin",
+      "nom": "151 (Elektek)",
+      "quantite": 1,
+      "prixAchat": 23.2,
+      "prixActuel": 40.0
+    },
+    {
+      "id": "upc-evolutions-prismatiques",
+      "type": "upc",
+      "nom": "Evolutions Prismatiques",
+      "quantite": 1,
+      "prixAchat": 129.6,
+      "prixActuel": 208.0
+    },
+    {
+      "id": "tripack-evolutions-prismatiques-nymphali",
+      "type": "tripack",
+      "nom": "Evolutions Prismatiques (Nymphali)",
+      "quantite": 1,
+      "prixAchat": 20.8,
+      "prixActuel": 33.0
+    },
+    {
+      "id": "etb-heros-transcendants",
+      "type": "etb",
+      "nom": "Heros Transcendants",
+      "quantite": 10,
+      "prixAchat": 800.0,
+      "prixActuel": 1110.0
+    },
+    {
+      "id": "bundle-evolutions-prismatiques",
+      "type": "bundle",
+      "nom": "Evolutions Prismatiques",
+      "quantite": 2,
+      "prixAchat": 76.8,
+      "prixActuel": 128.0
+    },
+    {
+      "id": "coffret-eaux-florissantes-premium",
+      "type": "coffret",
+      "nom": "Eaux Florissantes Premium",
+      "quantite": 1,
+      "prixAchat": 151.2,
+      "prixActuel": 228.0
+    },
+    {
+      "id": "etb-evolutions-prismatiques",
+      "type": "etb",
+      "nom": "Evolutions Prismatiques",
+      "quantite": 1,
+      "prixAchat": 76.0,
+      "prixActuel": 115.0
+    },
+    {
+      "id": "etb-etincelles-deferlantes",
+      "type": "etb",
+      "nom": "Etincelles Deferlantes",
+      "quantite": 1,
+      "prixAchat": 77.6,
+      "prixActuel": 126.0
+    },
+    {
+      "id": "coffret-evolutions-prismatiques-figurine-collection",
+      "type": "coffret",
+      "nom": "Evolutions Prismatiques (Figurine Collection)",
+      "quantite": 2,
+      "prixAchat": 181.6,
+      "prixActuel": 300.0
+    },
+    {
+      "id": "mini-tin-pouvoir-de-kanto-2025-mew-et-psykokwak",
+      "type": "mini_tin",
+      "nom": "Pouvoir de Kanto 2025 (Mew et Psykokwak)",
+      "quantite": 1,
+      "prixAchat": 16.0,
+      "prixActuel": 18.33
+    },
+    {
+      "id": "mini-tin-pouvoir-de-kanto-2025-mewtwo",
+      "type": "mini_tin",
+      "nom": "Pouvoir de Kanto 2025 (Mewtwo)",
+      "quantite": 1,
+      "prixAchat": 16.0,
+      "prixActuel": 22.0
+    },
+    {
+      "id": "mini-tin-pouvoir-de-kanto-2025-pikachu-et-goupix",
+      "type": "mini_tin",
+      "nom": "Pouvoir de Kanto 2025 (Pikachu et Goupix)",
+      "quantite": 1,
+      "prixAchat": 16.0,
+      "prixActuel": 17.67
+    },
+    {
+      "id": "mini-tin-pouvoir-de-kanto-2025-dracaufeu",
+      "type": "mini_tin",
+      "nom": "Pouvoir de Kanto 2025 (Dracaufeu)",
+      "quantite": 1,
+      "prixAchat": 16.0,
+      "prixActuel": 23.0
+    },
+    {
+      "id": "mini-tin-pouvoir-de-kanto-2025-dracolosse",
+      "type": "mini_tin",
+      "nom": "Pouvoir de Kanto 2025 (Dracolosse)",
+      "quantite": 1,
+      "prixAchat": 16.0,
+      "prixActuel": 23.0
+    },
+    {
+      "id": "etb-aventures-ensemble",
+      "type": "etb",
+      "nom": "Aventures Ensemble",
+      "quantite": 1,
+      "prixAchat": 56.0,
+      "prixActuel": 90.0
+    }
+  ]
+}
