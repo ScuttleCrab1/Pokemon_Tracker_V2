@@ -1,49 +1,30 @@
 :root {
-  /* surfaces */
-  --bg: #f2f4f9;
-  --surface: #ffffff;
-  --surface-alt: #f8f9fc;
-  --border: #eaecf2;
+  /* surfaces - warm paper, not stark white */
+  --paper: #f7f6f3;
+  --paper-alt: #f0efe9;
+  --border: #e2e0d8;
+  --border-strong: #cfccc0;
 
   /* text */
-  --text: #14161f;
-  --text-muted: #6b7284;
-  --text-faint: #9aa0b1;
+  --ink: #1a1a1a;
+  --ink-muted: #6b6a62;
+  --ink-faint: #9c9a8f;
 
-  /* brand */
-  --primary: #6c5ce7;
-  --primary-dark: #5a4bd6;
-  --primary-tint: #efecfe;
+  /* single neutral accent for interactive/graphic elements (nav, chart, links) */
+  --accent: #3a4a5c;
+  --accent-tint: #e8ebee;
 
-  /* semantic */
-  --positive: #16a34a;
-  --positive-tint: #dcfce7;
-  --negative: #dc2626;
-  --negative-tint: #fee2e2;
+  /* semantic - muted, never saturated */
+  --positive: #3b6d11;
+  --positive-tint: #eaf3de;
+  --negative: #a32d2d;
+  --negative-tint: #f6e6e4;
+  --neutral-tint: #ececE6;
 
-  /* KPI tile accents */
-  --accent-violet: #7c6ef6;
-  --accent-violet-tint: #efecff;
-  --accent-green: #22c55e;
-  --accent-green-tint: #e3fbe9;
-  --accent-orange: #f59e0b;
-  --accent-orange-tint: #fef3dc;
-  --accent-blue: #3b82f6;
-  --accent-blue-tint: #e7f0fe;
-
-  /* radius */
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 10px;
-
-  /* shadow */
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
-  --shadow-md: 0 4px 20px rgba(16, 24, 40, 0.06);
-  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.08);
-
-  /* layout */
-  --sidebar-w: 232px;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* shape - flat by design, no shadows, minimal radius */
+  --radius: 3px;
+  --sidebar-w: 220px;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -54,8 +35,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }

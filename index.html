@@ -7,7 +7,7 @@
     <title>Pokémon Collection Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
@@ -16,76 +16,116 @@
   <body>
     <div class="app">
       <aside class="sidebar">
-        <div class="sidebar__brand">
-          <span class="sidebar__brand-mark">🎴</span>
-          <span>Poké Tracker</span>
-        </div>
+        <div class="sidebar__brand">PKM Tracker</div>
         <nav class="sidebar__nav">
-          <a class="sidebar__link is-active" href="#dashboard">📊 Dashboard</a>
-          <a class="sidebar__link" href="#top-gainers-section">🏆 Top perf.</a>
-          <a class="sidebar__link" href="#imports-section">🕒 Historique</a>
+          <a class="sidebar__link" href="#synthese">Synthèse</a>
+          <a class="sidebar__link" href="#cartes">Cartes</a>
+          <a class="sidebar__link" href="#scelle">Scellé</a>
+          <a class="sidebar__link" href="#evolution">Évolution</a>
+          <a class="sidebar__link" href="#comparaison">Comparaison</a>
+          <a class="sidebar__link" href="#predictions">Prédictions</a>
         </nav>
-        <div class="sidebar__footer">Mis à jour à chaque envoi du CSV iEstim.</div>
+        <div class="sidebar__footer">Mis à jour automatiquement chaque jour depuis Google Drive.</div>
       </aside>
 
       <main class="main" id="main-content">
-        <div class="topbar" id="dashboard">
-          <div class="topbar__title">
-            <h1>Ma collection Pokémon</h1>
-            <p>Valeur, performance et historique de tes cartes &amp; produits scellés.</p>
+        <div class="topbar">
+          <div>
+            <div class="topbar__date" id="topbar-date"></div>
+            <div class="topbar__value" id="topbar-value">—</div>
+            <div class="topbar__delta" id="topbar-delta"></div>
           </div>
           <div id="period-picker"></div>
         </div>
 
-        <section class="kpi-grid" id="kpi-grid"></section>
+        <section class="section" id="synthese">
+          <h2 class="section__title">Synthèse</h2>
+          <div class="stat-row" id="stats-main"></div>
+        </section>
 
-        <section class="content-grid">
-          <div class="card chart-card">
-            <div class="card__header">
-              <div>
-                <div class="card__title">Évolution de la valeur</div>
-                <div class="card__subtitle">Total de la collection dans le temps</div>
-              </div>
-              <div class="card__legend">
-                <span><i style="background:#6c5ce7"></i>Total</span>
-                <span><i style="background:#7c6ef6"></i>Cartes</span>
-                <span><i style="background:#3b82f6"></i>Scellés</span>
-              </div>
+        <section class="section">
+          <div class="two-col">
+            <div>
+              <h2 class="section__title">Alertes — variations &gt; 5%</h2>
+              <ul class="alert-list" id="alerts-list"></ul>
             </div>
-            <canvas id="value-chart" height="90"></canvas>
-          </div>
-
-          <div class="card" id="imports-section">
-            <div class="card__header">
-              <div>
-                <div class="card__title">Derniers imports</div>
-                <div class="card__subtitle">Historique des snapshots reçus</div>
-              </div>
-            </div>
-            <div id="imports-table"></div>
+            <div id="comparaison-mini"></div>
           </div>
         </section>
 
-        <section class="top-grid" id="top-gainers-section">
-          <div class="card">
-            <div class="card__header">
-              <div>
-                <div class="card__title">🏆 Top 10 meilleures perfs</div>
-                <div class="card__subtitle">Sur la période sélectionnée</div>
-              </div>
-            </div>
-            <div id="top-gainers"></div>
-          </div>
+        <section class="section">
+          <div class="stat-row" id="stats-composite"></div>
+        </section>
 
-          <div class="card">
-            <div class="card__header">
-              <div>
-                <div class="card__title">📉 Top 10 pires perfs</div>
-                <div class="card__subtitle">Sur la période sélectionnée</div>
-              </div>
-            </div>
-            <div id="top-losers"></div>
+        <section class="section" id="evolution">
+          <h2 class="section__title">Évolution</h2>
+          <p class="section__subtitle">Variation de valeur sur la période sélectionnée.</p>
+          <div class="chart-legend">
+            <span><i style="background:#3a4a5c"></i>Total</span>
+            <span><i style="background:#8a8776"></i>Cartes</span>
+            <span><i style="background:#a32d2d"></i>Scellés</span>
           </div>
+          <div class="chart-wrap">
+            <canvas id="value-chart" height="90"></canvas>
+          </div>
+        </section>
+
+        <section class="section" id="predictions">
+          <h2 class="section__title">Prédiction à 1 an</h2>
+          <div id="prediction"></div>
+        </section>
+
+        <section class="section" id="comparaison">
+          <h2 class="section__title">Comparaison</h2>
+          <div id="comparaison-full"></div>
+        </section>
+
+        <section class="section" id="cartes">
+          <h2 class="section__title">Cartes</h2>
+          <div class="rotator" id="rotator-cartes"></div>
+        </section>
+
+        <section class="section">
+          <div class="two-col">
+            <div>
+              <h3 class="section__title">↑ Plus fortes hausses</h3>
+              <div id="movers-cartes-up"></div>
+            </div>
+            <div>
+              <h3 class="section__title">↓ Plus fortes baisses</h3>
+              <div id="movers-cartes-down"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section__title">Toutes les cartes</h3>
+          <div id="table-cartes"></div>
+        </section>
+
+        <section class="section">
+          <h3 class="section__title">Top 5 cartes</h3>
+          <div id="top5-cartes"></div>
+        </section>
+
+        <section class="section" id="scelle">
+          <h2 class="section__title">Scellé</h2>
+          <div class="rotator" id="rotator-scelles"></div>
+        </section>
+
+        <section class="section">
+          <h3 class="section__title">Tous les scellés</h3>
+          <div id="table-scelles"></div>
+        </section>
+
+        <section class="section">
+          <h3 class="section__title">Top 5 scellé</h3>
+          <div id="top5-scelles"></div>
+        </section>
+
+        <section class="section">
+          <h3 class="section__title">Derniers imports</h3>
+          <div id="imports-table"></div>
         </section>
       </main>
     </div>
