@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-08-09T1805",
+  "source": "portefeuille_cartes.csv (Fichier_003)",
+  "items": [
+    {
+      "id": "moustillon-051-promos-mega-evolution-mint-promos",
+      "nom": "Moustillon",
+      "numero": "051",
+      "serie": "Promos Mega-Evolution",
+      "bloc": "Promos",
+      "etat": "Mint",
+      "version": "promos",
+      "langue": "fr",
+      "gradationSociete": "_",
+      "gradationNote": "_",
+      "prixAchat": 0.0,
+      "prixActuel": 10.01
+    },
+    {
+      "id": "gruikui-050-promos-mega-evolution-mint-promos",
+      "nom": "Gruikui",
+      "numero": "050",
+      "serie": "Promos Mega-Evolution",
+      "bloc": "Promos",
+      "etat": "Mint",
+      "version": "promos",
+      "langue": "fr",
+      "gradationSociete": "_",
+      "gradationNote": "_",
+      "prixAchat": 0.0,
+      "prixActuel": 10.72
+    },
+    {
+      "id": "vipelierre-049-promos-mega-evolution-mint-promos",
+      "nom": "Vipelierre",
+      "numero": "049",
+      "serie": "Promos Mega-Evolution",
+      "bloc": "Promos",
+      "etat": "Mint",
+      "version": "promos",
+      "langue": "fr",
+      "gradationSociete": "_",
+      "gradationNote": "_",
+      "prixAchat": 0.0,
+      "prixActuel": 10.62
+    },
+    {
+      "id": "drakrai-cresselia-legende-100-102-triomphe-good-normal",
+      "nom": "Drakrai & cresselia legende",
+      "numero": "100/102",
+      "serie": "Triomphe",
+      "bloc": "Heartgold Soulsilver",
+      "etat": "Good",
+      "version": "normal",
+      "langue": "fr",
+      "gradationSociete": "_",
+      "gradationNote": "_",
+      "prixAchat": 0.0,
+      "prixActuel": 39.36
+    },
+    {
+      "id": "kyogre-groudon-legende-88-90-indomptable-very-good-normal",
+      "nom": "Kyogre & groudon legende",
+      "numero": "88/90",
+      "serie": "Indomptable",
+      "bloc": "Heartgold Soulsilver",
+      "etat": "Very Good",
+      "version": "normal",
+      "langue": "fr",
+      "gradationSociete": "_",
+      "gradationNote": "_",
+      "prixAchat": 0.0,
+      "prixActuel": 62.91
+    }
+  ]
+}

@@ -61,6 +61,12 @@
       "label": "Import cartes 0801"
     },
     {
+      "timestamp": "2026-08-09T1805",
+      "path": "data/snapshots/cartes/2026-08-09T1805.json",
+      "count": 5,
+      "label": "Import cartes 0809"
+    },
+    {
       "timestamp": "2026-08-25T1805",
       "path": "data/snapshots/cartes/2026-08-25T1805.json",
       "count": 341,
@@ -139,6 +145,12 @@
       "path": "data/snapshots/scelles/2026-08-01T1805.json",
       "count": 32,
       "label": "Import scelles 0801"
+    },
+    {
+      "timestamp": "2026-08-09T1805",
+      "path": "data/snapshots/scelles/2026-08-09T1805.json",
+      "count": 5,
+      "label": "Import scelles 0809"
     },
     {
       "timestamp": "2026-08-25T1805",

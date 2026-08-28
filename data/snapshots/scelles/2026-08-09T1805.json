@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-08-09T1805",
+  "source": "portefeuille_items.csv (Fichier_003)",
+  "items": [
+    {
+      "id": "upc-sulfura-ex-de-la-team-rocket",
+      "type": "upc",
+      "nom": "Sulfura Ex de la Team Rocket",
+      "quantite": 1,
+      "prixAchat": 170.0,
+      "prixActuel": 238.47
+    },
+    {
+      "id": "etb-flammes-fantasmagoriques",
+      "type": "etb",
+      "nom": "Flammes Fantasmagoriques",
+      "quantite": 1,
+      "prixAchat": 55.0,
+      "prixActuel": 98.63
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-nymphali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Nymphali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 19.3
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-voltali",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Voltali)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 20.25
+    },
+    {
+      "id": "mini-tin-evolutions-prismatiques-pyroli",
+      "type": "mini_tin",
+      "nom": "Evolutions Prismatiques (Pyroli)",
+      "quantite": 1,
+      "prixAchat": 11.99,
+      "prixActuel": 20.3
+    }
+  ]
+}
